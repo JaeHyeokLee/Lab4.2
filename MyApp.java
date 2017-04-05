@@ -3,8 +3,10 @@ public class main {
   Product product = new Product("Edam", 3.3, 120);
   System.out.println("Current Product value is " + product.countValue());
   product.printProduct();
+
   product.changePrice(3.0);
-  System.out.println("After Change price, Current Product value is " + product.countValue());
+  product.changeBalance(100);
+  System.out.println("After Change balance and Price, Current Product value is " + product.countValue());
   product.printProduct();
  }
 }
@@ -22,8 +24,11 @@ class Product {
  }
  public void changePrice(double newPrice){
   this.price = newPrice;
+}
+ public void changeBalance(int newValue){
+  this.amount = newValue;
  }
  public void printProduct() {
-  System.out.printf("Product %s, price %4.1f and balance %d pcs", name, price, amount);
+  System.out.printf("Product %s, price %4.1f and balance %d pcs\n", name, price, amount);
  }
 }
